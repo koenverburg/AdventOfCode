@@ -42,7 +42,6 @@ module.exports = {
     },
   ],
   actions: (data) => {
-    console.log(data)
     return [
       {
         type: 'add',
@@ -62,6 +61,26 @@ module.exports = {
           )}/day-${pad(data.daynumber)}.test.ts`
         ),
         templateFile: './day/test.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: path.resolve(
+          `./src/${data.year}/day-${pad(data.daynumber)}-${toFolderName(
+            data.exercise
+          )}/data-real.txt`
+        ),
+        templateFile: './day/data.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: path.resolve(
+          `./src/${data.year}/day-${pad(data.daynumber)}-${toFolderName(
+            data.exercise
+          )}/data-control.txt`
+        ),
+        templateFile: './day/data.hbs',
         abortOnFail: true,
       },
     ]

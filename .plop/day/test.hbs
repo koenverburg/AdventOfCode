@@ -1,18 +1,14 @@
+import { prepareInput } from '../../helpers'
 import { part1, part2 } from './day-{{ pad daynumber }}'
 
 test('part1 control', () => {
-  expect(part1(1, 2)).toBe(3)
+  const r = part1(prepareInput('./src/{{ year }}/day-{{ pad daynumber }}-{{ toFolderName exercise }}/data-control.txt'))
+  expect(r).toBe(24000)
 })
 
-test('part1 real', () => {
-  expect(part1(1, 2)).toBe(3)
+test('part1 real ', () => {
+  const r = part1(prepareInput('./src/{{ year }}/day-{{ pad daynumber }}-{{ toFolderName exercise }}/data-real.txt'))
+  expect(r).toBe(24000)
 })
 
-test('part2 control', () => {
-  expect(part2(1, 2)).toBe(3)
-})
-
-test('part2 real', () => {
-  expect(part2(1, 2)).toBe(3)
-})
 

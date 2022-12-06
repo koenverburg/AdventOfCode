@@ -1,5 +1,5 @@
 const dayGenerator = require('./day/index')
-const { pad } = require('./utils')
+const { pad, toFolderName } = require('./utils')
 
 module.exports = (plop) => {
   plop.setGenerator('hoc', dayGenerator)
@@ -17,5 +17,9 @@ module.exports = (plop) => {
 
   plop.addHelper('pad', (p , _) => {
     return pad(p)
+  })
+
+  plop.addHelper('toFolderName', (p, _) => {
+    return toFolderName(p)
   })
 }

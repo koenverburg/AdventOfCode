@@ -6,6 +6,10 @@ export const sortHighest = (a: number, b: number) => {
   return 0
 }
 
+export function count(list: number[]) {
+  return list.reduce((total, current) => total + current, 0)
+}
+
 // export const findHeighestValue = (series: number[]) => {
 //   let max = 1
 //
@@ -19,9 +23,10 @@ export const sortHighest = (a: number, b: number) => {
 // }
 
 export const prepareInput = (path: string) => {
-  return fs.readFileSync(path, { encoding: 'utf8'})
-    .replace(/(\n)|(\r)|(\r\n)/g, "\n")
-    .split("\n")
+  return fs
+    .readFileSync(path, { encoding: 'utf8' })
+    .replace(/(\n)|(\r)|(\r\n)/g, '\n')
+    .split('\n')
 }
 
 // prepareInput('./src/2022/day-01-calorie-counting/data-part-1.txt')
